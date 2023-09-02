@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!--Rubik font links-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Fraunces:opsz,wght@9..144,700&family=League+Spartan:wght@700&family=Lexend+Deca&family=Montserrat:wght@500;700&family=Roboto:wght@400;700&family=Rubik:wght@300&display=swap" rel="stylesheet">
+  
+  
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <!--Tailwind css basic configuration-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={
+      theme:{
+        extend:{
+        fontFamily: {
+          sans: ['Rubik','sans-serif'],
+          serif: ['serif'],
+          mono: ['ui-monospace', 'SFMono-Regular'],
+        },
+        colors:{
+          /*Primary*/
+          Blue: "hsl(246, 80%, 60%)",
+          LightRedW : "hsl(15, 100%, 70%)",
+          SoftBlue : "hsl(195, 74%, 62%)",
+          LightRed : "hsl(348, 100%, 68%)",
+          LimeGreen : "hsl(145, 58%, 55%)",
+          Violet: "hsl(264, 64%, 52%)",
+          SoftOrange : "hsl(43, 84%, 65%)",
+
+          /*Neutral*/
+
+          VeryDarkBlue: "hsl(226, 43%, 10%)",
+          DarkBlue: "hsl(235, 46%, 20%)",
+          DesaturatedBlue: "hsl(235, 45%, 61%)",
+          PaleBlue: "hsl(236, 100%, 87%)",
+        },
+        screens:{
+          sm:'250px',
+          md:'600px',
+          lg:'820px'
+        }
+      }
+    }
+  }
+  </script>
+  <style>
+    .bg-no-repeat{
+      background-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!--Main card-->
+  <div class="flex justify-center items-center bg-VeryDarkBlue">
+
+    <!--Card--> 
+    <div class="my-12 mx-2 lg:mt-40 ">
+
+      <!--Grid card-->
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+
+
+        <!--Report for  person-->
+
+        <!--  card-->
+        <div class="bg-DarkBlue rounded-xl md:col-span-2 lg:col-span-1 lg:row-span-2 lg:w-40" >
+
+          <!--person infomation-->
+          <div class="bg-Blue rounded-xl p-6 flex flex-col sm:flex-row lg:flex-col  space-y-3  space-x-3">
+            <!--person image-->
+            <img src="images/image-jeremy.png" class="h-12 w-12" alt="Jeremy image">
+            <!--person name-->
+            <div class="text-PaleBlue">
+              <div class="text-xs">Report for</div>
+              <div class="text-xl">Jeremy Robson</div>
+            </div>
+          </div>
+          <!---->
+          <div class="text-DesaturatedBlue px-6 py-4 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+            <a href="" class="hover:text-white">Daily</a>
+            <a href="" class="text-white">Weekly</a>
+            <a href="" class="hover:text-white">Monthly</a>
+          </div>
+        </div>
+        <!--Work-->
+        <div class="rounded-xl  bg-LightRedW bg-[url('images/icon-work.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex justify-between items-center">
+              <div class="text-[18px]">Work</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class="space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">32hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 36hrs</div>
+            </div>
+          </div>
+        </div>
+        <!--play-->
+        <div class="rounded-xl  bg-SoftBlue bg-[url('images/icon-play.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex justify-between items-center">
+              <div class="text-[18px]">Play</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class=" space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">10hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 8hrs</div>
+            </div>
+          </div>
+        </div>
+        <!--study-->
+        <div class="rounded-xl  bg-LightRed bg-[url('images/icon-study.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex justify-between  items-center">
+              <div class="text-[18px]">Study</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class=" space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">4hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 7hrs</div>
+            </div>
+          </div>
+        </div>
+        <!--exercise-->
+        <div class="rounded-xl  bg-LimeGreen bg-[url('images/icon-exercise.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex justify-between  items-center">
+              <div class="text-[18px]">Exercise</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class="space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">4hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 5hrs</div>
+            </div>
+          </div>
+        </div>
+        <!--social-->
+        <div class="rounded-xl  bg-Violet bg-[url('images/icon-social.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex justify-between  items-center">
+              <div class="text-[18px]">Social</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class="space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">5hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 10hrs</div>
+            </div>
+          </div>
+        </div>
+        <!--self care-->
+        <div class="rounded-xl  bg-SoftOrange bg-[url('images/icon-self-care.svg')]  bg-no-repeat  bg-[right_20px_top_-7px]">
+          <div class="mt-6 px-6 py-5  text-white  rounded-xl hover:brightness-200 bg-DarkBlue">
+
+            <div class="flex  justify-between  items-center">
+              <div class="text-[18px]">Self Care</div>
+              <a href=""><img src="images/icon-ellipsis.svg" class="h-1 w-4" alt="icon ellipsis svg"></a>
+            </div>
+            <div class=" space-x-1 flex flex-col sm:flex-row lg:flex-col sm:justify-between sm:items-center lg:justify-stretch lg:items-stretch">
+              <div class="text-2xl">2hrs</div>
+              <div class="text-PaleBlue text-xs">Last Week - 2hrs</div>
+            </div>
+          </div>
+        </div>
+        
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--source-->
+  <div class="bg-VeryDarkBlue text-center  text-gray-300 pt-20 pb-2">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-blue-600">Frontend Mentor</a>. 
+    Coded by <a href="#" class="text-blue-600">Your Name Here</a>.
+  </div>
+</body>
+</html>
